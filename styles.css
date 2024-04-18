@@ -9,8 +9,8 @@ body {
 
 h1 {
     color: rgb(9, 205, 45);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 32px;
+    font-family: 'Jersey 15', sans-serif;
+    font-size: 48px;
 }
 
 .todoheader {
@@ -49,4 +49,16 @@ h1 {
 
 .todoholder button:hover {
     background-color: #c77700;
+}
+
+.todoholder ul [taskList] {
+    color: white;
+}
+
+.outputcss {
+    color: white;
+    list-style-type: none;
+    padding: 5px 10px;
+    line-height: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
