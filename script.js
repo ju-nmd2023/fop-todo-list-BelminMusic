@@ -10,7 +10,7 @@ function addTask() {
     if (task) {
         createTaskElement(task);
         taskInput.value = "";
-        saveTask();
+        saveTasks();
     } else {
         alert('Enter a task!');
     }
@@ -36,19 +36,22 @@ function createTaskElement(task) {
 
     deleteButton.addEventListener('click', function() {
         taskList.removeChild(listItem);
-        saveTask();
+        saveTasks();
     });
 
     checkButton.addEventListener('click', function() {
         listItem.style.textDecoration = 'line-through';
-        saveTask();
+        saveTasks();
     });
 }
 
-function saveTask() {
+function saveTasks() {
     let tasks = [];
     taskList.querySelectorAll('li').forEach(function(item) {
-        tasks.push(item.textContent.trim());
+        let taskText = item.textContent.trim();
+        
+        taskText = taskText.replace('💯', '').replace('✘', '').trim();
+        tasks.push(taskText);
     });
 
     localStorage.setItem('tasks', JSON.stringify(tasks));
